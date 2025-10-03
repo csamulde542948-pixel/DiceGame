@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-Player Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎲 2-Player Dice Game 🎲</h1>
+        <div class="game-rules">
+            <p><strong>Rules:</strong> Roll 2-6 to add to your round score. Roll 1 and lose all round points! First to 100 wins!</p>
+        </div>
+        
+        <div class="players-container">
+            <!-- Player 1 Section -->
+            <div class="player player-1 active">
+                <h2>Player 1</h2>
+                <div class="total-score">
+                    <span class="score-label">Total Score</span>
+                    <span class="total" id="total-1">0</span>
+                </div>
+                <div class="current-score">
+                    <span class="score-label">Current Round</span>
+                    <span class="current" id="current-1">0</span>
+                </div>
+            </div>
+
+            <!-- Game Center -->
+            <div class="game-center">
+                <div class="dice-container">
+                    <div class="dice" id="dice">🎲</div>
+                </div>
+                <div class="dice-number" id="dice-number">-</div>
+                
+                <div class="game-controls">
+                    <button class="btn btn-roll" id="btn-roll">🎲 Roll Dice</button>
+                    <button class="btn btn-hold" id="btn-hold">💰 Hold</button>
+                    <button class="btn btn-new" id="btn-new">🆕 New Game</button>
+                </div>
+                
+                <div class="game-status" id="game-status">Player 1's Turn</div>
+            </div>
+
+            <!-- Player 2 Section -->
+            <div class="player player-2">
+                <h2>Player 2</h2>
+                <div class="total-score">
+                    <span class="score-label">Total Score</span>
+                    <span class="total" id="total-2">0</span>
+                </div>
+                <div class="current-score">
+                    <span class="score-label">Current Round</span>
+                    <span class="current" id="current-2">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Winner Modal -->
+        <div class="winner-modal" id="winner-modal">
+            <div class="modal-content">
+                <h2 id="winner-text">🎉 Player 1 Wins! 🎉</h2>
+                <p>Congratulations! You reached 100 points first!</p>
+                <button class="btn btn-new" onclick="newGame()">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
